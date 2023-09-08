@@ -9,8 +9,10 @@ export default function Search() {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    router.push(`/results/${search}`);
-    setSearch('');
+    if (search) {
+      router.push(`/results/${search}`);
+      setSearch('');
+    }
   };
 
   return (
